@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../buildMultiTargeting/TD_SPA_Project.props" />
+  <Import Project="..\buildMultiTargeting\TD_SPA_Project.props" />
 </Project>
