@@ -10,8 +10,6 @@ public class WeatherForecastController : ControllerBase
 {
     private readonly ICustomerService _customerService;
 
-    private readonly ILogger<WeatherForecastController> _logger;
-
     public WeatherForecastController(ICustomerService customerService)
     {
         _customerService = customerService;
