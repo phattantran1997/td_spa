@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TD_SPA_Project", "TD_SPA_Project\TD_SPA_Project.csproj", "{0F4B0EB7-2B47-4E63-A42B-7D1436C9DEFB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TD_SPA_FORM", "TD_SPA_FORM\TD_SPA_FORM.csproj", "{6D12CC5E-9D53-44CD-B3C1-C472FDE850BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0F4B0EB7-2B47-4E63-A42B-7D1436C9DEFB} = {0F4B0EB7-2B47-4E63-A42B-7D1436C9DEFB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{2A1266F7-CA77-48C8-BC5F-89ED839E2D99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{6D12CC5E-9D53-44CD-B3C1-C472FDE850BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D12CC5E-9D53-44CD-B3C1-C472FDE850BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D12CC5E-9D53-44CD-B3C1-C472FDE850BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A1266F7-CA77-48C8-BC5F-89ED839E2D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A1266F7-CA77-48C8-BC5F-89ED839E2D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A1266F7-CA77-48C8-BC5F-89ED839E2D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A1266F7-CA77-48C8-BC5F-89ED839E2D99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
