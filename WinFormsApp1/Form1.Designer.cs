@@ -21,7 +21,6 @@ namespace WinFormsApp1
             }
             base.Dispose(disposing);
         }
-        CommonContext
         #region Windows Form Designer generated code
 
         /// <summary>
