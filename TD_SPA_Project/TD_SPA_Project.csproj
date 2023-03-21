@@ -22,10 +22,7 @@
     <None Remove="Serivce\Implements\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entity\" />
-    <Folder Include="Serivce\" />
     <Folder Include="DBContext\" />
     <Folder Include="Ultility\" />
-    <Folder Include="Serivce\Implements\" />
   </ItemGroup>
 </Project>

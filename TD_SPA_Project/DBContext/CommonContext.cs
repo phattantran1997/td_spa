@@ -12,14 +12,20 @@ namespace TD_SPA_Project.DBContext
         {
         }
         public DbSet<Customer> Customers { get; set; }
-
+        public DbSet<Employee> Employees { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.ToTable("customer");
-                entity.HasNoKey();
+                entity.HasKey("iduser");
+
+            });
+            modelBuilder.Entity<Employee>(entity =>
+            {
+                entity.ToTable("employee");
+                entity.HasKey("idemployee");
 
             });
             base.OnModelCreating(modelBuilder);
