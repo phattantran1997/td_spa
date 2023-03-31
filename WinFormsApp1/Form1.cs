@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using System.ComponentModel.Design;
 using TD_SPA_Project.DBContext;
 using TD_SPA_Project.Serivce.Implements;
@@ -18,6 +19,9 @@ namespace WinFormsApp1
         {
             var x = await EmployeeRepository.GetAll();
             Console.WriteLine(x);
+            
+            new Form2(EmployeeRepository, commonContext).ShowDialog();
+            Program.ServiceProvider.GetRequiredService<Form2>();
         }
     }
 }   
