@@ -8,19 +8,19 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        public readonly ICustomerRepository EmployeeRepository;
-        public Form1(ICustomerRepository employeeRepository, CommonContext commonContext)
+        public readonly IEmployeeRepository EmployeeRepository;
+        public readonly Form2 form2;
+        public Form1(IEmployeeRepository employeeRepository,Form2 form2)
         {
             InitializeComponent();
             this.EmployeeRepository = employeeRepository;
+            this.form2 = form2;
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
             var x = await EmployeeRepository.GetAll();
-            Console.WriteLine(x);
-            
-            new Form2(EmployeeRepository, commonContext).ShowDialog();
+            this.form2.ShowDialog();
             Program.ServiceProvider.GetRequiredService<Form2>();
         }
     }

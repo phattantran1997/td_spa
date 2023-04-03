@@ -15,21 +15,22 @@ namespace WinFormsApp1
 {
     public partial class Form2 : Form
     {
-        public readonly ICustomerRepository EmployeeRepository;
-        public Form2(ICustomerRepository employeeRepository, CommonContext commonContext)
+        public readonly ICustomerRepository customerRepository;
+
+        public Form2(ICustomerRepository customerRepository)
         {
             InitializeComponent();
-
+            this.customerRepository = customerRepository;
         }
 
-        private  void Form2_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
            
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            var x = await EmployeeRepository.GetAll();
+            var x = await customerRepository.GetAll();
         }
     }
 }

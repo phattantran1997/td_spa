@@ -27,8 +27,6 @@ namespace WinFormsApp1
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }
-
-
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
@@ -42,10 +40,10 @@ namespace WinFormsApp1
                 .ConfigureServices((context, services) => {
                     services.AddTransient<IEmployeeRepository, EmployeeRepository>();
                     services.AddTransient<ICustomerRepository, CustomerRepository>();
-
                     services.AddTransient<Form1>();
+                    services.AddTransient<Form2>();
+
                     string connectionString = context.Configuration.GetConnectionString("MySQLConnectionString").ToString();
-                    connectionString = "server=127.0.0.1;user=root;password=root;port=3306;database=TD_spa;";
                     services.AddDbContext<CommonContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
                 })
