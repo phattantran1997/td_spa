@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 using TD_SPA_Project.DBContext;
 using TD_SPA_Project.Serivce.Implements;
 using TD_SPA_Project.Serivce.Interfaces;
@@ -23,7 +24,7 @@ namespace WinFormsApp1
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<Form1>());
+            Application.Run(ServiceProvider.GetRequiredService<FormMain>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }
@@ -40,10 +41,12 @@ namespace WinFormsApp1
                 .ConfigureServices((context, services) => {
                     services.AddTransient<IEmployeeRepository, EmployeeRepository>();
                     services.AddTransient<ICustomerRepository, CustomerRepository>();
+                    services.AddTransient<FormMain>();
                     services.AddTransient<Form1>();
                     services.AddTransient<Form2>();
 
                     string connectionString = context.Configuration.GetConnectionString("MySQLConnectionString").ToString();
+                    connectionString = "server=127.0.0.1;user=root;password=root;port=3306;database=TD_spa;";
                     services.AddDbContext<CommonContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
                 })
